@@ -16,6 +16,8 @@
  */
 package org.jboss.as.quickstarts.rshelloworld;
 
+import java.util.Random;
+
 /**
  * A simple CDI service which is able to say hello to someone
  *
@@ -24,8 +26,11 @@ package org.jboss.as.quickstarts.rshelloworld;
  */
 public class HelloService {
 
+    static Random r = new Random();
+    public static final int i = r.nextInt();
+
     String createHelloMessage(String name) {
-        return "Hello " + name + "!";
+        return "Hello " + name + "! From server: " + i;
     }
 
 }
